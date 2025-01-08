@@ -91,7 +91,7 @@
     display:flex;
     gap:20px;
   }
-  .patient-card-container{
+  .card-container{
     padding:10px;
     flex:5;
     border:1px solid purple;
@@ -125,7 +125,7 @@
     list-style-type:circle;
     background-color:inherit;
   }
-  .patient-card{
+  .one-card{
     border:1px solid pink;
     text-align:center;
     margin:10px;

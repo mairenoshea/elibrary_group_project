@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="main.css">
+<!-- change to match your file/naming structure -->
+<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="app.js"></script>
+<!-- change to match your file/naming structure -->
+</head>
+<body>
+    <div class="container">
+<div class="header">
+    <div class="headerLinks">
+        <a href="/">
+            <button class="headerLinkButton">Home</button>
+        </a>
+    </div>
+    <div class="headerTitle">My Profile</div>
+    <div class="headerLinks">
+    
+    <a>
+        <button class="headerLinkButton">logout</button></a>
+</div></div>
+<div class="another_container"><div class="flex-1">
+<div class="card-container">
+    <div class="one-card">
+
+       <img src="assets/userpic.png" style="max-width:100%;"/>
+       <h3>John Doe</h3>
+
+
+<div class="button"><button>Edit Profile</button></div>
+</div></div></div>
+
+<div class="flex-3">
+    <div class="reviews_container_container">
+    <h3>Books I've Read</h3>
+    <div class="card-container" style="flex-wrap:wrap;overflow:hidden;">
+        
+        <div class="card" style="width:min-content; max-width:75%; font-size:75%;">
+
+            <img src="assets/the_brothers_karamazov.jpeg" class="book_cover">
+            <h2>{book.title}</h2>
+            <h3>{book.author}</h3>
+    <h5>My Rating: ⭐⭐⭐⭐ </h5>
+    
+    
+    
+    <div><button>view book</button></div>
+    </div>
+    <div class="patient-card" style="width:min-content; max-width:75%; font-size:75%;">
+
+        <img src="assets/the_brothers_karamazov.jpeg" class="book_cover">
+        <h2>{book.title}</h2>
+        <h3>{book.author}</h3>
+<h5>My Rating: ⭐⭐⭐⭐ </h5>
+
+
+
+<div><button>view book</button></div>
+</div>
+</div>
+    <div class="reviews_container_container">
+    <h3>My Reviews</h3>
+        <div class="reviews_container">
+            
+            <div class="one_review_container">
+                <h4 class="flex-1-review">Book 1 Title</h4>
+                <div class="flex_container">
+                <div class="flex-1">⭐⭐⭐⭐</div><div class="flex-3">by me on Date</div></div>
+               <h4 class="flex-1-review">Review Title</h4>
+               <p class="flex-1-revdetails">Review Text/Details</p>
+            </div>
+            <div class="one_review_container">
+                <h4 class="flex-1-review">Book 2 Title</h4>
+                <div class="flex_container">
+                <div class="flex-1">⭐⭐⭐⭐</div><div class="flex-3">by me on Date</div></div>
+               <h4 class="flex-1-review">Review Title</h4>
+               <p class="flex-1-revdetails">Review Text/Details</p>
+            </div>
+        </div>
+    
+</div>
+
+
+</div>
+</div></div>
+</body>
+</html>
