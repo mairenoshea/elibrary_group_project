@@ -19,20 +19,58 @@
             <button class="headerLinkButton">Home</button>
         </a>
     </div>
-    <div class="headerTitle">book title</div>
+    <div class="headerTitle">greatReads</div>
     <div class="headerLinks">
     
     <a>
-        <button class="headerLinkButton">customButtonName</button></a></div>
+        <button class="headerLinkButton">logout</button></a></div>
 </div>
+<div class="header" style="margin:0% 25%; margin-bottom:20px; background-color:green;">
+    
+    <div class="headerTitle" style="background-color:green"><input type="text" value="Search..." /></div>
+    <div class="headerLinks" style="background-color:green">
+    
+    <a>
+        <button class="headerLinkButton">Search</button></a></div>
+</div>
+<div class="another_container">
+    <div class="sidebar_menu">
+        <span  class="active_menu">
+        <div class="menu_title">
+           
+            all genres
+        </div></span>
+        <li class="menu_subtitle">
+           nonfiction
+        </li>
+        <li class="menu_subtitle">
+            fiction
+        </li>
+    </div>
 <div class="patient-card-container">
     <div class="patient-card">
 
-<h3>{patient.age} years of age.</h3>
-<h3>Symptoms:</h3><h5>{patient.symptoms}</h5>
-<div><button>discharge patient</button></div>
-</div>
-</div>
+        <img src="assets/the_brothers_karamazov.jpeg" class="book_cover">
+        <h3>{book.author}</h3> <h5>({book.published_year})</h5>
+<h3>{book.average_rating}/5 </h3>
+<h5>{book.genre}</h5>
+<h5>{book.pages} pages</h5>
 
+
+<div><button>view book</button></div>
+</div>
+<div class="patient-card">
+
+    <img src="assets/the_brothers_karamazov.jpeg" class="book_cover">
+<h3>{book.author}</h3> <h5>({book.published_year})</h5>
+<h3>{book.average_rating}/5 </h3>
+<h5>{book.genre}</h5>
+<h5>{book.pages} pages</h5>
+
+
+<div><button>view book</button></div>
+</div>
+</div>
+</div>
 </body>
 </html>
