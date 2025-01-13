@@ -8,7 +8,6 @@ const DEFAULT_FORM_DATA = {
   email: "",
   password: "",
   confirmPassword: "",
-  review: [],
   image: "", 
 };
 
@@ -96,17 +95,6 @@ export const AddUser = () => {
             onChange={updateFormData}
           />
           {errors.confirmPassword && <p id="error">{errors.confirmPassword.message}</p>}
-        </label>
-
-        <label>
-          Review
-          <input
-            type="text"
-            name="review"
-            value={formData.review.join(', ')}
-            onChange={e => setFormData(prev => ({ ...prev, review: e.target.value.split(', ') }))}
-          />
-          {errors.review && <p id="error">{errors.review.message}</p>}
         </label>
 
         <label>
