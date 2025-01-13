@@ -2,7 +2,7 @@
 
 <div className="header">
     <div className="headerLinks">
-        <Link to={"/patients"}>
+        <Link to={"/"}>
             <button className="headerLinkButton">Home</button>
         </Link>
     </div>
