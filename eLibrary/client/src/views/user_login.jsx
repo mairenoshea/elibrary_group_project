@@ -35,7 +35,7 @@ export const AddUser = () => {
     e.preventDefault();
     const submissionFunction = id ? updateOneUser : addUser;
     submissionFunction(formData)
-      .then(res => navigate(`/patients/view`))
+      .then(res => navigate(`/Home`))
       .catch(error => setErrors(error));
   };
 
