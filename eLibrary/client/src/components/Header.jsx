@@ -17,6 +17,9 @@ const Header = (props) => {
             <Link to={`${props.customButtonLink}`}>
                 <button className="headerLinkButton">{props.customButtonName}</button></Link>:null}</div>
         </div>
+        <div className="header">
+            
+        </div>
         </>
     )
 }
