@@ -2,6 +2,9 @@ import { useState } from 'react'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import './App.css'
 import SearchBar from './components/SearchBar.jsx'
+import Signup from './views/Signup'; 
+import Profile from './views/Profile';
+
 
 function App() {
   const [data,setData]=useState([]);
@@ -34,7 +37,9 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<Home data={data} onSearch={onSearch}/>}/>
+          <Route path='/' element={<Signup />} 
+          <Route path='/Home' element={<Home data={data} onSearch={onSearch}/>}/>
+          <Route path='/profile' element={<Profile />}
           <Route path='/library' element={<ViewAllBooks data={data} onSearch={onSearch}/>}/>
           <Route path='/book/:book_id' element={<ViewOneBook data={data} onSearch={onSearch}/>} />
           
