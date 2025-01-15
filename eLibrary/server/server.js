@@ -5,7 +5,7 @@ import dbConnect from './config/mongoose.config.js';
 
 
 const app = express();
-app.use(express.json(), cors());
+app.use(express.json(), cors({origin:['http://localhost:5173', 'https://api.itbook.store/1.0/', 'http://localhost:8000']}));
 dotenv.config();
 const PORT = process.env.PORT;
 dbConnect();

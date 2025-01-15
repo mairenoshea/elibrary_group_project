@@ -26,8 +26,5 @@ router.route("/book/:id")
     .delete(deleteBookByid);
 
 
-
-
-
 export default router;
 

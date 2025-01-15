@@ -5,7 +5,7 @@ const router=Router();
 
 router.route("/")
     .get(getAllUsers)
-    .post(addUser);
+    .post(addUser)
 
 router.route("/view/profile/:id")
 //for displaying the user and their information
@@ -13,7 +13,7 @@ router.route("/view/profile/:id")
 //for updating the user and their information
     .put(updateOneUser)
 //for deleting a user 
-    .delete(deleteUserByid);
+    .delete(deleteUserByid)
 
     
 export default router;

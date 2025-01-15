@@ -1,16 +1,20 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import './App.css'
 import SearchBar from './components/SearchBar.jsx'
-import Signup from './views/Signup'; 
-import Profile from './views/Profile';
+import user_login from './views/user_login.jsx'
+import Home from './views/Home.jsx'
+import Profile from './views/Profile.jsx'
+import ViewAllBooks from './views/ViewAllBooks.jsx'
+
+import ViewOneBook from './views/ViewOneBook.jsx'
 
 
 function App() {
   const [data,setData]=useState([]);
   const[searchResults, setSearchResults]=useState([]);
   useEffect(()=>{
-  fetch("https://api.itbook.store/1.0/")
+  fetch("https://api.itbook.store/1.0/search/")
     .then(response => {
       return response.json();
     }).then(response=>{
@@ -22,7 +26,7 @@ function App() {
 
   const onSearch=(query)=>{
     console.log(query);
-    fetch(`https://swapi.dev/api/${query}/`)
+    fetch(`https://api.itbook.store/1.0/search/${query}/`)
       .then(response=>{
         return response.json();
       }).then(response=>{
@@ -37,7 +41,7 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<user_login />}/>
+          <Route path="/" element={<user_login />}/>
           <Route path='/Home' element={<Home data={data} onSearch={onSearch}/>}/>
           <Route path='/view/profile/:user_id' element={<Profile />}/>
           <Route path='/library' element={<ViewAllBooks data={data} onSearch={onSearch}/>}/>
