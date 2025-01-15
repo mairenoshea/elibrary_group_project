@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import UserInfo from './UserInfo';
-import BooksRead from './BooksRead';
+import AddUser from './views/user_login';
 import Reviews from './Reviews';
 import './ProfilePage.css'; // Import CSS
 
