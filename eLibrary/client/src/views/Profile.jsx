@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import AddUser from './views/user_login';
 import Reviews from './Reviews';
-import './ProfilePage.css'; // Import CSS
+import './Profile.css'; // Import CSS
 
 const ProfilePage = () => {
   const [books, setBooks] = useState([]);
