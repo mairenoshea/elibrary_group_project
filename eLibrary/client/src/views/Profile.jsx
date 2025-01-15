@@ -4,6 +4,7 @@ import { getOneUserByid } from "../services/services";
 import './Profile.css'; 
 
 const Profile = () => {
+ const [books, setBooks] = useState([]);
  const { id } = useParams();
   const [profiletInfo, setProfileInfo] = useState({});
   const [error, setError] = useState(null);
@@ -23,15 +24,13 @@ const Profile = () => {
       .catch(error => console.error('Error fetching books:', error));
   }, []);
 
-  const UserInfo = () => (
+  return (
     <div className="user-info">
       <img src="/path/to/profile-image.jpg" alt="Profile" />
-      <h2>John Doe</h2>
+      <h2>profileInfo.name</h2>
       <button>Edit Profile</button>
     </div>
-  );
 
-  const BooksRead = ({ books }) => (
     <div className="books-read">
       <h3>Books I've Read</h3>
       <div className="books-list">
@@ -44,9 +43,7 @@ const Profile = () => {
         ))}
       </div>
     </div>
-  );
 
-  const Reviews = () => (
     <div className="reviews">
       <h3>My Reviews</h3>
       <div className="review-item">
@@ -54,15 +51,14 @@ const Profile = () => {
         <p>Review Title by me on Date</p>
         <p>Review Text/Details</p>
       </div>
+ 
       <div className="review-item">
         <h4>Book 2 Title</h4>
         <p>Review Title by me on Date</p>
         <p>Review Text/Details</p>
       </div>
     </div>
-  );
 
-  return (
     <div className="profile-page">
       <header>
         <h1>My Profile</h1>
