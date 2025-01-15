@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import './App.css'
 import SearchBar from './components/SearchBar.jsx'
-import user_login from './views/user_login.jsx'
+import UserLogin from './views/UserLogin.jsx'
 import Home from './views/Home.jsx'
 import Profile from './views/Profile.jsx'
 import ViewAllBooks from './views/ViewAllBooks.jsx'
@@ -41,7 +41,7 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<user_login />}/>
+          <Route path="/" element={<UserLogin />}/>
           <Route path='/Home' element={<Home data={data} onSearch={onSearch}/>}/>
           <Route path='/view/profile/:user_id' element={<Profile />}/>
           <Route path='/library' element={<ViewAllBooks data={data} onSearch={onSearch}/>}/>

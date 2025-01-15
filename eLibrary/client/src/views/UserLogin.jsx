@@ -13,7 +13,7 @@ import { getOneUserByid, addUser, updateOneUser } from "../services/services";
     image: "", 
   };
 
-export const AddUser = () => {
+export const UserLogin = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [formData, setFormData] = useState(DEFAULT_FORM_DATA);
@@ -36,8 +36,12 @@ export const AddUser = () => {
     e.preventDefault();
     const submissionFunction = id ? updateOneUser : addUser;
     submissionFunction(formData)
-      .then(res => navigate(`/Home`))
-      .catch(error => setErrors(error));
+      .then(res => {
+        navigate(`/Home`)
+  })
+      .catch((error) => {
+        setErrors(error);
+  })
   };
 
   return (
@@ -116,4 +120,4 @@ export const AddUser = () => {
   );
 };
 
-export default AddUser;
+export default UserLogin;
