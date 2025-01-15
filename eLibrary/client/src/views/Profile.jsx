@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './Profile.css'; 
 
-const ProfilePage = () => {
+const Profile = () => {
   const [books, setBooks] = useState([]);
 
   useEffect(() => {
@@ -65,5 +65,5 @@ const ProfilePage = () => {
   );
 };
 
-export default ProfilePage;
+export default Profile;
 
