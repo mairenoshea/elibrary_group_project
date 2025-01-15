@@ -1,9 +1,21 @@
 import React, { useEffect, useState } from 'react';
+import { useParams, useNavigate, Link } from "react-router-dom";
+import { deleteUsertByid, getOneUserByid } from "../services/services";
 import './Profile.css'; 
 
 const Profile = () => {
-  const [books, setBooks] = useState([]);
+ const { id } = useParams();
+  const [profiletInfo, setProfileInfo] = useState({});
+  const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
+  useEffect(() => {
+    getOneUserByid(id)
+      .then(res => setProfileInfo(res))
+      .catch(error => {
+        console.log('Profile.jsx', error);
+      });
+  }, [id]);
   useEffect(() => {
     fetch('https://api.itbook.store/1.0/new')
       .then(response => response.json())
