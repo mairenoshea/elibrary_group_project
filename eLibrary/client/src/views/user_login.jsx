@@ -3,16 +3,17 @@ import { useNavigate, useParams } from "react-router-dom";
 import { getOneUserByid, addUser, updateOneUser } from "../services/services";
 
 
-
-export const AddUser = () => {
   const DEFAULT_FORM_DATA = {
     name: "",
     userName: "",
     email: "",
     password: "",
     confirmPassword: "",
+    reviews:[],
     image: "", 
   };
+
+export const AddUser = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [formData, setFormData] = useState(DEFAULT_FORM_DATA);
