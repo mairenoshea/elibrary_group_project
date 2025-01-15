@@ -9,7 +9,6 @@ import { getOneUserByid, addUser, updateOneUser } from "../services/services";
     email: "",
     password: "",
     confirmPassword: "",
-    reviews:[],
     image: "", 
   };
 
