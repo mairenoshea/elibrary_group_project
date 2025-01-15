@@ -1,0 +1,40 @@
+.profile-page {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logout-btn {
+  padding: 10px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.user-info, .books-read, .reviews {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+  width: 30%;
+}
+
+.books-list {
+  display: flex;
+}
+
+.book-item {
+  margin-right: 10px;
+}
+
+.review-item {
+  margin-bottom: 10px;
+}
