@@ -15,6 +15,9 @@ export const ViewOneBook = (props) => {
     const [rating, setRating] = useState(0);
     const [bookIsbn, setBookIsbn] = useState(isbn);
     const [user, setUser] = useState();
+    const [newReviewTitle, setNewReviewTitle]= useState('');
+    const [newReviewRating, setNewReviewRating]=useState();
+    const[formErrors, setFormErrors] = useState({});
 const [reviewToDelete, setReviewToDelete] = useState();
     useEffect(() => {
         fetch(`https://api.itbook.store/1.0/search/${isbn}`)
@@ -54,6 +57,38 @@ const [reviewToDelete, setReviewToDelete] = useState();
                 console.log(error);
             })
     }
+    const newReviewTitleHandler=(e)=>{
+        
+        const value=e.target.value.trim();
+        let errorMsg='';
+        console.log(value);
+        if (value) {
+            if (value.length < 2) {
+                errorMsg = 'Title must be at least 2 characters long!';
+            } else if (value.length > 40) {
+                errorMsg = 'Title must be less than 40 characters long';
+            }
+        } else {
+            errorMsg = "Title is required!";
+        }
+        setFormErrors({ ...formErrors, newReviewTitle: errorMsg });
+    
+        setNewReviewTitle(value);
+        setTitle(value);
+    }
+
+    const newReviewRatingHandler=(e) => {
+        const value=e.target.value;
+        let errorMsg='';
+        if(!value) {
+            errorMsg='Rating is required!'
+        }
+        setFormErrors({...formErrors,newReviewRating:errorMsg});
+        setNewReviewRating(value);
+        setUserName(value);
+    }
+
+    
     const deleteHandler =(e) => {
         e.preventDefault;
         axios.delete(`http://localhost:8000/reviews/${reviewToDelete._id}`)
@@ -186,8 +221,9 @@ const [reviewToDelete, setReviewToDelete] = useState();
                             type="text" 
                             name="title" 
                             value={title} 
-                            onChange={(e) => setTitle(e.target.value)}/>
+                            onChange={newReviewTitleHandler}/>
                             </div>
+                            {formErrors.newReviewTitle ? <p className="error">{formErrors.newReviewTitle}</p> : null}
                             <div>
                             <label>Description</label>
                             <input 

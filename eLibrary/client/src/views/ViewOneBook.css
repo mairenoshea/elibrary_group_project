@@ -1,7 +1,7 @@
 .container {
     display:flex;
     gap:20px;
-    
+    width:80%;
 }
 .book-container{
     width:80%;
