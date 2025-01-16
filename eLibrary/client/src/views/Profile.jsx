@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate,Link } from "react-router-dom";
 import Header from '../components/Header.jsx'
-import { getOneUserByid } from "../services/services";
+import { getOneUserByid,deleteUserByid } from "../services/services";
+import { getOneReviewByid,deleteReviewByid } from "../services/services";
+
 import './Profile.css'; 
 
 const Profile = () => {
@@ -17,6 +19,18 @@ const Profile = () => {
         console.log('Profile.jsx', error);
       });
   }, [id]);
+
+
+   const deleteReview= () => {
+    deleteReviewByid(id)
+      .then(() => {
+        navigate("");
+      })
+      .catch(error => {
+        console.log('Profile.jsx', error);
+        setError("Failed to delete review.");
+      });
+  };
 
   useEffect(() => {
     fetch('https://api.itbook.store/1.0/new')
@@ -58,13 +72,8 @@ const Profile = () => {
             <h4>Book 1 Title</h4>
             <p>Review Title by me on Date</p>
             <p>Review Text/Details</p>
-          </div>
-          <div className="review-item">
-            <h4>Book 2 Title</h4>
-            <p>Review Title by me on Date</p>
-            <p>Review Text/Details</p>
-          </div>
-        </div>
+           <button onClick={deleteReview}>Remove Remove</button> <br />
+
       </div>
     </div>
   );
