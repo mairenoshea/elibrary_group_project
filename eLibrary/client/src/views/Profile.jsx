@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate,Link } from "react-router-dom";
 import Header from '../components/Header.jsx'
 import { getOneUserByid,deleteUserByid } from "../services/services";
-import { getOneReviewByid,deleteReviewByid } from "../services/services";
+import { getOneReviewByid,deleteReviewByid } from "../services/review.services";
 
 import './Profile.css'; 
 
