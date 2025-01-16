@@ -65,7 +65,7 @@ const [reviewToDelete, setReviewToDelete] = useState();
     return (
         <>
             <Header pageTitle='view one book'/>
-            <div className="container">
+            {/* <div className="container">
                 {
                 books.map(book => (
                 <div key={book.title} className="single-book">
@@ -132,7 +132,93 @@ const [reviewToDelete, setReviewToDelete] = useState();
                         </form>
                     </div>
                 </div>
-            </div></div>
+            </div>
+            </div> */}
+
+
+            <div class="container"><div class="flex-1">
+<div class="card-container">
+    <div class="one-card">
+    {
+                books.map(book => (
+                <div key={book.title} className="single-book">
+                <h1>{book.title} <br /> {book.subtitle}</h1>
+                <img src={book.image} alt={book.title} class="book_cover"/>
+                </div>
+                ))}
+                </div></div></div>
+             
+
+<div class="flex-3">
+    <div class="reviews_container_container">
+    <h3>Reader Reviews</h3>
+        <div class="reviews_container">
+            
+            {
+                        reviews.map(review => (
+                            review.bookIsbn == isbn ? 
+                                <div key={review.title} className="one_review_container">
+                                    <div class="flex_container">
+                                        <div class="flex-1">
+                                            <p>Rating: {review.rating}/5</p></div>
+                                            <div class="flex-3">by<h3>{review.user}</h3></div>
+                        <h4 class="flex-1-review">Title: {review.title}</h4>
+                        <p class="flex-1-revdetails">Description: {review.description}</p>
+                        <form onSubmit={deleteHandler} ><input type="submit" onClick={(e)=> setReviewToDelete(review)} value="delete X" /></form>
+                        </div></div>
+                        :
+                        <div></div>
+                    )
+                    )}
+                    
+        </div>
+        <div>
+        <br></br>
+        <hr></hr>
+        <br></br>
+        <h2>Review this book</h2>
+                    <div className="create_review">
+                        <form onSubmit={submitHandler}>
+                            <div>
+                            <label>Review Title</label>
+                            <input 
+                            type="text" 
+                            name="title" 
+                            value={title} 
+                            onChange={(e) => setTitle(e.target.value)}/>
+                            </div>
+                            <div>
+                            <label>Description</label>
+                            <input 
+                            type="text" 
+                            className="textbox" 
+                            name="description"
+                            value={description} 
+                            onChange={(e) => setDescription(e.target.value)}/>
+                            </div>
+                            <div>
+                            <label>Rating</label>
+                            <input type="number"
+                            min={0}
+                            max={5} 
+                            name="rating"
+                            value={rating} 
+                            onChange={(e) => setRating(e.target.value)}/></div>
+                            <div>
+                            <label>User name</label>
+                            <input 
+                            type="text" 
+                            name="user"
+                            value={user} 
+                            onChange={(e) => setUser(e.target.value)}/></div>
+                            <button type="submit">Submit Review</button>
+                        </form>
+                    </div>
+                </div>
+</div>
+                    
+                </div>
+                </div>
         </>
     )
 }

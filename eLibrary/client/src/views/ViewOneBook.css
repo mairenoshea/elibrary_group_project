@@ -1,6 +1,7 @@
 .container {
     display:flex;
     width:80%;
+    gap:20px;
 }
 .single-book{
     margin-left:10%;
@@ -10,3 +11,184 @@
 .reviews{
     flex:1;
 }
+
+* {
+    margin:0 auto;
+    background-color:white;
+    font-family:sans-serif;
+  }
+
+  .flex_container{
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+    padding:5px;
+    gap:10px;
+  }
+  .flex-1-review {
+    padding:5px;
+    display:flex;
+  }
+
+  .flex-1-review-label {
+    margin-right:0px;
+    padding:5px;
+    display:flex;
+    flex:1;
+  }
+
+  .flex-1-review-input {
+    margin-left:0px;
+    flex:1;
+    padding:5px;display:flex;
+  }
+  .flex-1-revdetails {
+    padding:5px;
+    
+    display:flex;
+    padding-left:20px;
+  }
+  .header {
+    margin:20px 0px;
+    display:flex;
+    padding:0px 10px;
+    background-color:lightgray;
+  }
+  .button {
+    margin:5px;
+  }
+  .headerLinks {
+    padding:5px;
+    flex:1;
+    display:flex;
+    align-items:center;
+    background-color:lightgray;
+  }
+  
+  .headerLinkButton {
+    display:block;
+    padding:5px 10px;
+    border:2px solid black;
+    font-weight:bold;
+  }
+  
+  .headerTitle {
+    padding:10px;
+    flex:3;
+    background-color:lightgray;
+    display:flex;
+    justify-content:center;
+    align-items:flex-end;
+    font-size:40px;
+    font-weight:bold;
+  }
+  .book_cover{
+    max-height:200px;
+  }
+  table {
+    padding:5px;
+  }
+  .reviews_container_container{
+    padding:10px;
+    flex:5;
+    border:1px solid purple;
+    margin:10px 0px;
+  }
+  td, th{
+    padding:10px 20px;
+    background-color:aquamarine;
+  }
+  .another_container{
+    display:flex;
+    gap:20px;
+  }
+  .card-container{
+    padding:10px;
+    flex:5;
+    border:1px solid purple;
+    display:flex;
+    justify-content:center;
+    margin:10px 0px;
+    flex-wrap:wrap;
+  }
+
+  .sidebar_menu {
+    flex:1;
+    margin:10px;
+    background-color:yellowgreen;
+    padding:10px;
+  }
+  .menu_title{
+    font-size:100%;
+    padding:5px;
+    padding-left:10px;
+    background-color:inherit;
+  }
+.active_menu{
+  background-color:lightgreen;
+  font-weight:bold;
+  
+}
+
+  .menu_subtitle {
+    margin-left:10px;
+    padding:5px;
+    list-style-type:circle;
+    background-color:inherit;
+  }
+  .one-card{
+    border:1px solid pink;
+    text-align:center;
+    margin:10px;
+    padding:5px;
+  }
+  h1,h3{
+    margin-bottom:8px;
+  }
+  h5 {
+    margin-bottom:5px;
+  }
+  
+  .green{
+    color:green;
+  }
+  .one_review_container{
+    border:1px solid blue;
+    margin-bottom:10px;
+    padding:5px;
+  }
+  .red{
+    color:red;
+  }
+  
+  
+  
+  .form-row{
+    text-align:center;
+    padding-bottom:5px;
+    display:block;
+  }
+  
+  .flex-1{
+    flex:1;
+  }
+  
+  .flex-2{flex:2;}
+
+  .flex-3{flex:3;}
+  
+  .error{
+    color:red;
+    font-size:12px;
+  }
+  
+  .mini-form{
+    width:300px;
+  }
+  
+  .filter-search-bar{
+    width:50%;
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+  }
