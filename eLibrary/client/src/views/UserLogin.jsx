@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import Header from '../components/Header.jsx'
 import { getOneUserByid, addUser, updateOneUser } from "../services/services";
 
 
