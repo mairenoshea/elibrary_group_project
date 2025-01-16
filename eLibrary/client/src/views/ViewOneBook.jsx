@@ -13,9 +13,9 @@ export const ViewOneBook = (props) => {
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const [rating, setRating] = useState(0);
-    const [bookIsbn, setBookIsbn] = useState();
+    const [bookIsbn, setBookIsbn] = useState(isbn);
     const [user, setUser] = useState();
-
+const [reviewToDelete, setReviewToDelete] = useState();
     useEffect(() => {
         fetch(`https://api.itbook.store/1.0/search/${isbn}`)
           .then(response => response.json())
@@ -39,7 +39,7 @@ export const ViewOneBook = (props) => {
             title,
             description,
             rating,
-            bookIsbn : book_id,
+            bookIsbn : isbn,
             user
         }
         axios.post(`http://localhost:8000/library`, review)
@@ -54,7 +54,14 @@ export const ViewOneBook = (props) => {
                 console.log(error)
             })
     }
-
+    const deleteHandler =(e) => {
+        e.preventDefault;
+        axios.delete(`http://localhost:8000/reviews/${reviewToDelete._id}`)
+            .catch((error)=>{
+                setError(error.response.data.errors);
+                console.log(error)
+            })
+    }
     return (
         <>
             <Header />
@@ -76,19 +83,26 @@ export const ViewOneBook = (props) => {
                         <p>Title: {review.title}</p>
                         <p>Description: {review.description}</p>
                         <p>Rating: {review.rating}/5</p>
+                        <form onSubmit={deleteHandler} ><input type="submit" onClick={(e)=> setReviewToDelete(review)} value="delete X" /></form>
                         </div>
                         :
                         <div></div>
                     ))}
-
+                    
+    <div>
+        <br></br>
+        <h2>Review this book</h2>
                     <div className="create_review">
                         <form onSubmit={submitHandler}>
-                            <label>Title</label>
+                            <div>
+                            <label>Review Title</label>
                             <input 
                             type="text" 
                             name="title" 
                             value={title} 
                             onChange={(e) => setTitle(e.target.value)}/>
+                            </div>
+                            <div>
                             <label>Description</label>
                             <input 
                             type="text" 
@@ -96,24 +110,27 @@ export const ViewOneBook = (props) => {
                             name="description"
                             value={description} 
                             onChange={(e) => setDescription(e.target.value)}/>
+                            </div>
+                            <div>
                             <label>Rating</label>
                             <input type="number"
                             min={0}
                             max={5} 
                             name="rating"
                             value={rating} 
-                            onChange={(e) => setRating(e.target.value)}/>
-                            <label>Name</label>
+                            onChange={(e) => setRating(e.target.value)}/></div>
+                            <div>
+                            <label>User name</label>
                             <input 
                             type="text" 
                             name="user"
                             value={user} 
-                            onChange={(e) => setUser(e.target.value)}/>
+                            onChange={(e) => setUser(e.target.value)}/></div>
                             <button type="submit">Submit Review</button>
                         </form>
                     </div>
                 </div>
-            </div>
+            </div></div>
         </>
     )
 }
