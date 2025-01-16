@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import Header from '../components/Header.jsx'
 import { getOneUserByid, addUser, updateOneUser } from "../services/services";
+import Header from '../components/Header.jsx'
 
 
   const DEFAULT_FORM_DATA = {
@@ -11,38 +11,36 @@ import { getOneUserByid, addUser, updateOneUser } from "../services/services";
     password: "",
     confirmPassword: "",
     image: "", 
-  };
+  }
 
 export const UserLogin = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [formData, setFormData] = useState(DEFAULT_FORM_DATA);
+
+
   const [errors, setErrors] = useState({});
 
   useEffect(() => {
     if (id) {
       getOneUserByid(id)
         .then(res => setFormData(res))
-        .catch(error => console.error(error));
+        .catch()
     }
   }, [id]);
 
   const updateFormData = e => {
-    const { realName, value } = e.target;
-    setFormData(prev => ({ ...prev, [realName]: value }));
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = e => {
     e.preventDefault();
     const submissionFunction = id ? updateOneUser : addUser;
     submissionFunction(formData)
-      .then(res => {
-        navigate(`/Home`)
-  })
-      .catch((error) => {
-        setErrors(error);
-  })
-  };
+      .then(res =>  navigate(`/Home`))
+      .catch((error) =>  setErrors(error))
+  }
 
   return (
     <div>
