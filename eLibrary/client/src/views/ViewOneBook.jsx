@@ -5,7 +5,7 @@ import Header from '../components/Header.jsx'
 import SearchBar from "../components/SearchBar.jsx";
 import './ViewOneBook.css'
 export const ViewOneBook = (props) => {
-    const navigate = useNavigate();
+
     const {isbn} = useParams();
     const [books, setBooks] = useState([]);
     const [error, setError] = useState(null);
@@ -158,10 +158,10 @@ const [reviewToDelete, setReviewToDelete] = useState();
                         reviews.map(review => (
                             review.bookIsbn == isbn ? 
                                 <div key={review.title} className="one_review_container">
-                                    <div class="flex_container">
-                                        <div class="flex-1">
+                                    <div className="flex_container">
+                                        <div className="flex-1">
                                             <p>Rating: {review.rating}/5</p></div>
-                                            <div class="flex-3">by<h3>{review.user}</h3></div>
+                                            <div className="flex-3">by<h3>{review.user}</h3></div>
                         <h4 className="flex-1-review">Title: {review.title}</h4>
                         <p className="flex-1-revdetails">Description: {review.description}</p>
                         <form onSubmit={deleteHandler} ><input type="submit" onClick={(e)=> setReviewToDelete(review)} value="delete X" /></form>
