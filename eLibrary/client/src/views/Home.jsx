@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
 
+import { useEffect, useState } from "react";
 import { Navigate, useNavigate, useParams, Link } from "react-router-dom";
 import Header from '../components/Header.jsx'
 import SearchBar from "../components/SearchBar.jsx";
@@ -19,11 +19,6 @@ export const Home = (props) => {
         <>
             <Header />
             <div className="container">
-                <div className="genres">
-                    <p>All Genres</p>
-                    <a href="">nonfiction</a>
-                    <a href="">fiction</a>
-                </div>
                 <div className="books-cont">
                     <h1>New Releases</h1>
                     <div className="books">
@@ -32,7 +27,9 @@ export const Home = (props) => {
                         <div key={book.title} className="single-book">
                         <img src={book.image} alt={book.title} />
                         <p>{book.title} <br /> {book.subtitle}</p>
-                        <Link to={`/books/${book.isbn13}`}>View Book</Link>
+                        <Link to={`/book/${book.isbn13}`}>
+                            <button>View Book</button>
+                        </Link>
                         </div>
                         ))}
                     </div>
