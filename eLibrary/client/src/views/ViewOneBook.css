@@ -1,7 +1,10 @@
 .container {
     display:flex;
-    width:80%;
     gap:20px;
+    
+}
+.book-container{
+    width:80%;
 }
 .single-book{
     margin-left:10%;

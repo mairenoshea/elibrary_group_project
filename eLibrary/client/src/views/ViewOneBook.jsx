@@ -64,6 +64,7 @@ const [reviewToDelete, setReviewToDelete] = useState();
     }
     return (
         <>
+       
             <Header pageTitle='view one book'/>
             {/* <div className="container">
                 {
@@ -136,7 +137,7 @@ const [reviewToDelete, setReviewToDelete] = useState();
             </div> */}
 
 
-            <div className="container"><div className="flex-1">
+<div className="book-container"><div className="container"><div className="flex-1">
 <div className="card-container">
     <div className="one-card">
     {
@@ -218,7 +219,7 @@ const [reviewToDelete, setReviewToDelete] = useState();
 </div>
                     
                 </div>
-                </div>
+                </div></div>
         </>
     )
 }
