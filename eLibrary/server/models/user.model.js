@@ -2,7 +2,7 @@ import {model, Schema} from 'mongoose';
 
 const UserSchema = new Schema(
     {
-        name: {
+        realname: {
             type: String,
             required: [true, 'Name is required'],
         },
