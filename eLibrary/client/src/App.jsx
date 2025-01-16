@@ -1,7 +1,8 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, } from 'react'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import './App.css'
-import SearchBar from './components/SearchBar.jsx'
+
+
 import UserLogin from './views/UserLogin.jsx'
 import Home from './views/Home.jsx'
 import Profile from './views/Profile.jsx'
@@ -13,6 +14,7 @@ import ViewOneBook from './views/ViewOneBook.jsx'
 function App() {
   const [data,setData]=useState([]);
   const[searchResults, setSearchResults]=useState([]);
+
   useEffect(()=>{
   fetch("https://api.itbook.store/1.0/search/")
     .then(response => {
