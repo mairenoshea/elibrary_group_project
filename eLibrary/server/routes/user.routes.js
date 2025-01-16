@@ -1,7 +1,7 @@
 import { addUser, getAllUsers, getOneUserByid, updateOneUser, deleteUserByid} from "../controller/user.controller.js";
 import { Router } from 'express';
 
-const userRouter=Router();
+const router=Router();
 
 userRouter.route("/")
     .get(getAllUsers)
@@ -25,4 +25,4 @@ userRouter.route("/view/profile/:id")
     .delete(deleteUserByid)
 
     
-export default userRouter;
+export default router;
