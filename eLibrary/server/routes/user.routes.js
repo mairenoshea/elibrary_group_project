@@ -7,9 +7,6 @@ router.route("/")
     .get(getAllUsers)
     .post(addUser)
 
-    router.route("/users")
-    .get(getAllUsers)
-    .post(addUser)
 router.route("/view/profile/:id")
 //for displaying the user and their information
     .get(getOneUserByid)

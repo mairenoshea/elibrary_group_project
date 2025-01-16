@@ -104,7 +104,7 @@ export const UserLogin = () => {
         <label>
           Image
           <input
-            type="file"
+            type="text"
             name="image"
             value={formData.image}
             onChange={updateFormData}
