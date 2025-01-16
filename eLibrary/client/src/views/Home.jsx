@@ -7,7 +7,7 @@ import './Home.css'
 export const Home = (props) => {
     const [books, setBooks] = useState([]);
     const [error, setError] = useState(null);
-
+    
     useEffect(() => {
         fetch('https://api.itbook.store/1.0/new')
           .then(response => response.json())
@@ -17,7 +17,7 @@ export const Home = (props) => {
 
     return (
         <>
-            <Header />
+            <Header  pageTitle="eLibrary"/>
             <div className="container">
                 <div className="books-cont">
                     <h1>New Releases</h1>

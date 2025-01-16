@@ -3,7 +3,7 @@ import { Navigate, useNavigate, useParams, Link } from "react-router-dom";
 import axios from 'axios';
 import Header from '../components/Header.jsx'
 import SearchBar from "../components/SearchBar.jsx";
-
+import './ViewOneBook.css'
 export const ViewOneBook = (props) => {
     const navigate = useNavigate();
     const {isbn} = useParams();
@@ -64,7 +64,7 @@ const [reviewToDelete, setReviewToDelete] = useState();
     }
     return (
         <>
-            <Header />
+            <Header pageTitle='view one book'/>
             <div className="container">
                 {
                 books.map(book => (
@@ -90,6 +90,8 @@ const [reviewToDelete, setReviewToDelete] = useState();
                     ))}
                     
     <div>
+        <br></br>
+        <hr></hr>
         <br></br>
         <h2>Review this book</h2>
                     <div className="create_review">

@@ -9,7 +9,7 @@ app.use(express.json(), cors({origin:['http://localhost:5173', 'https://api.itbo
 dotenv.config();
 const PORT = process.env.PORT;
 
-app.use("/api", router);
+app.use("/api", userRouter);
 
 dbConnect();
 app.use(userRouter,libraryRouter);

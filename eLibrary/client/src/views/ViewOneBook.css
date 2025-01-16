@@ -1,0 +1,12 @@
+.container {
+    display:flex;
+    width:80%;
+}
+.single-book{
+    margin-left:10%;
+    flex:1;
+}
+
+.reviews{
+    flex:1;
+}
