@@ -1,13 +1,13 @@
 import axios from "axios"
 
 const USER_INSTANCE = axios.create({
-    baseURL: 'http://localhost:5173'
+    baseURL: 'http://localhost:8000'
 })
 
 
 export const addUser = async (data) => {
     try {
-        const RES = await USER_INSTANCE.post('/users', data)
+        const RES = await USER_INSTANCE.post("/users", data)
         return RES.data
     }
     catch (error) { throw error.response.data.errors }

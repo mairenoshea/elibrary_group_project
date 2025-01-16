@@ -2,20 +2,20 @@ import {addBook, getAllBooks, getOneBookByid, updateOneBook, deleteBookByid} fro
 import {addReview, getAllReviews, getOneReviewByid, updateOne, deleteReviewByid} from '../controller/review.controller.js';
 import { Router } from 'express';
 
-const router=Router();
+const libraryRouter=Router();
 
 
-router.route("/Home")
+libraryRouter.route("/Home")
 //for displaying all books that have been reviewed on the site
     .get(getAllBooks)
 //for sending the post request when the review a book form is submitted
     .post(addReview);
 
-router.route("/library")
+libraryRouter.route("/library")
     .get(getAllBooks)
     .post(addReview);
 
-router.route("/book/:id")
+libraryRouter.route("/book/:id")
 //for displaying one book and its information and reviews on the site
     .get(getOneBookByid)
 //for sending the post request when the review THIS book form is submitted
@@ -26,5 +26,5 @@ router.route("/book/:id")
     .delete(deleteBookByid);
 
 
-export default router;
+export default libraryRouter;
 

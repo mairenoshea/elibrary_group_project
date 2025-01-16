@@ -40,6 +40,7 @@ export const UserLogin = () => {
     submissionFunction(formData)
       .then(res =>  navigate(`/Home`))
       .catch((error) =>  setErrors(error))
+    console.log(errors);
   }
 
   return (
@@ -54,7 +55,7 @@ export const UserLogin = () => {
             value={formData.realName}
             onChange={updateFormData}
           />
-          {errors.realName && <p id="error">{errors.realName.message}</p>}
+          {/* {errors.realName && <p id="error">{errors.realName.message}</p>}  */}
         </label>
 
         <label>
@@ -65,7 +66,7 @@ export const UserLogin = () => {
             value={formData.userName}
             onChange={updateFormData}
           />
-          {errors.userName && <p id="error">{errors.userName.message}</p>}
+          {/* {errors.userName && <p id="error">{errors.userName.message}</p>} */}
         </label>
 
         <label>
@@ -76,7 +77,7 @@ export const UserLogin = () => {
             value={formData.email}
             onChange={updateFormData}
           />
-          {errors.email && <p id="error">{errors.email.message}</p>}
+          {/* {errors.email && <p id="error">{errors.email.message}</p>} */}
         </label>
 
         <label>
@@ -87,7 +88,7 @@ export const UserLogin = () => {
             value={formData.password}
             onChange={updateFormData}
           />
-          {errors.password && <p id="error">{errors.password.message}</p>}
+          {/* {errors.password && <p id="error">{errors.password.message}</p>} */}
         </label>
 
         <label>
@@ -98,7 +99,7 @@ export const UserLogin = () => {
             value={formData.confirmPassword}
             onChange={updateFormData}
           />
-          {errors.confirmPassword && <p id="error">{errors.confirmPassword.message}</p>}
+          {/* {errors.confirmPassword && <p id="error">{errors.confirmPassword.message}</p>} */}
         </label>
 
         <label>
@@ -109,7 +110,7 @@ export const UserLogin = () => {
             value={formData.image}
             onChange={updateFormData}
           />
-          {errors.image && <p id="error">{errors.image.message}</p>}
+          {/* {errors.image && <p id="error">{errors.image.message}</p>} */}
         </label>
 
         <button type="submit">Add User</button>
