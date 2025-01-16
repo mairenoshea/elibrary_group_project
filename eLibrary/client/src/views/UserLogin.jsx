@@ -4,7 +4,7 @@ import { getOneUserByid, addUser, updateOneUser } from "../services/services";
 
 
   const DEFAULT_FORM_DATA = {
-    name: "",
+    realName: "",
     userName: "",
     email: "",
     password: "",
@@ -27,8 +27,8 @@ export const UserLogin = () => {
   }, [id]);
 
   const updateFormData = e => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    const { realName, value } = e.target;
+    setFormData(prev => ({ ...prev, [realName]: value }));
   };
 
   const handleSubmit = e => {
@@ -51,18 +51,18 @@ export const UserLogin = () => {
           Reviewer Name
           <input
             type="text"
-            name="name"
-            value={formData.name}
+            realName="realName"
+            value={formData.realName}
             onChange={updateFormData}
           />
-          {errors.name && <p id="error">{errors.name.message}</p>}
+          {errors.realName && <p id="error">{errors.realName.message}</p>}
         </label>
 
         <label>
           User Name
           <input
             type="text"
-            name="userName"
+            realName="userName"
             value={formData.userName}
             onChange={updateFormData}
           />
@@ -73,7 +73,7 @@ export const UserLogin = () => {
           Email
           <input
             type="email"
-            name="email"
+            realName="email"
             value={formData.email}
             onChange={updateFormData}
           />
@@ -84,7 +84,7 @@ export const UserLogin = () => {
           Password
           <input
             type="password"
-            name="password"
+            realName="password"
             value={formData.password}
             onChange={updateFormData}
           />
@@ -95,7 +95,7 @@ export const UserLogin = () => {
           Confirm Password
           <input
             type="password"
-            name="confirmPassword"
+            realName="confirmPassword"
             value={formData.confirmPassword}
             onChange={updateFormData}
           />
@@ -106,7 +106,7 @@ export const UserLogin = () => {
           Image
           <input
             type="text"
-            name="image"
+            realName="image"
             value={formData.image}
             onChange={updateFormData}
           />
