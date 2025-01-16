@@ -46,7 +46,7 @@ function App() {
           <Route path='/Home' element={<Home data={data} onSearch={onSearch}/>}/>
           <Route path='/view/profile/:user_id' element={<Profile />}/>
           <Route path='/library' element={<ViewAllBooks data={data} onSearch={onSearch}/>}/>
-          <Route path='/book/:book_id' element={<ViewOneBook data={data} onSearch={onSearch}/>} />
+          <Route path='/books/:isbn' element={<ViewOneBook data={data} onSearch={onSearch}/>} />
           
         </Routes>
       </BrowserRouter>

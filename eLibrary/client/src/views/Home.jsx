@@ -32,7 +32,7 @@ export const Home = (props) => {
                         <div key={book.title} className="single-book">
                         <img src={book.image} alt={book.title} />
                         <p>{book.title} <br /> {book.subtitle}</p>
-                        <Link to={`/book/${book.isbn13}`}>View Book</Link>
+                        <Link to={`/books/${book.isbn13}`}>View Book</Link>
                         </div>
                         ))}
                     </div>
