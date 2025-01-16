@@ -4,13 +4,14 @@ import { Navigate, useNavigate, useParams, Link } from "react-router-dom";
 import Header from '../components/Header.jsx'
 import SearchBar from "../components/SearchBar.jsx";
 import './Home.css'
-export const Home = (props) => {
+export const Search = (props) => {
     const [books, setBooks] = useState([]);
     const [error, setError] = useState(null);
     const {data, onSearch} = props;
+    const {query} = useParams();
     
     useEffect(() => {
-        fetch('https://api.itbook.store/1.0/new')
+        fetch(`https://api.itbook.store/1.0/search/${query}`)
           .then(response => response.json())
           .then(data => setBooks(data.books))
           .catch(error => console.error('Error fetching books:', error));
@@ -22,7 +23,7 @@ export const Home = (props) => {
             <SearchBar onSearch={onSearch} />
             <div className="container">
                 <div className="books-cont">
-                    <h1>New Releases</h1>
+                    <h1>Search Results</h1>
                     <div className="books">
                         {
                         books.slice(0,4).map(book => (
@@ -41,4 +42,4 @@ export const Home = (props) => {
     )
 }
 
-export default Home;
+export default Search;

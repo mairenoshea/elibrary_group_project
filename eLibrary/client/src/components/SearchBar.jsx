@@ -1,28 +1,26 @@
+
+import {useState} from 'react';
+import {useNavigate} from 'react-router-dom';
+import '../views/ViewOneBook.css'
+
 const SearchBar = (props) => {
-    const {data, onSearch} = props;
-    const query=Object.keys(data);
-    console.log(data);
+    const { onSearch } = props;
 
+    const [currentQuery,setCurrentQuery]=useState();
 
-    const [currentQuery,setCurrentQuery]=useState(query);
-    const [currentGenre, setCurrentGenre] = useState();
     const [currentID, setCurrentID]=useState();
 
+    const navigate = useNavigate();
     const handleSubmit=(e)=>{
         e.preventDefault();
         onSearch(currentQuery);
+        navigate(`/Search/${currentQuery}`);
     }
 
     return (
-        <div>
+        <div className="flex-container">
             <form onSubmit={handleSubmit} className="search-bar">
-                Search for:
-                <label>Genre:</label>
-                <select onChange={(e)=>{
-                    setCurrentGenre(e.target.value);}}>
-                    {Object.keys(data).map((item,index)=>
-                <option key={index}>{item}</option>)}
-                </select>
+                <label>Search for:</label>
                 
                 <input type="text" onChange={(e)=>{setCurrentQuery(e.target.value)}}>
                 </input>
