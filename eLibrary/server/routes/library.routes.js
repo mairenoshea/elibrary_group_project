@@ -1,4 +1,4 @@
-import {addBook, getAllBooks, getOneBookByid, updateOneBook, deleteBookByid} from '../controller/library.controller.js';
+import {addBook, getAllBooks, getOneBookByid, getOneBookByIsbn, updateOneBook, deleteBookByid} from '../controller/library.controller.js';
 import {addReview, getAllReviews, getOneReviewByid, updateOne, deleteReviewByid} from '../controller/review.controller.js';
 import { Router } from 'express';
 
@@ -15,7 +15,7 @@ libraryRouter.route("/library")
     .get(getAllBooks)
     .post(addReview);
 
-libraryRouter.route("/book/:isbn")
+libraryRouter.route("/book/:id")
 //for displaying one book and its information and reviews on the site
     .get(getOneBookByid)
 //for sending the post request when the review THIS book form is submitted
@@ -25,6 +25,7 @@ libraryRouter.route("/book/:isbn")
 //for deleting the book 
     .delete(deleteBookByid);
 
-
+libraryRouter.route("/book/:isbn")
+    .get(getOneBookByIsbn)
 export default libraryRouter;
 

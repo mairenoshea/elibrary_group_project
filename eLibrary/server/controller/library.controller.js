@@ -31,6 +31,17 @@ export const getOneBookByid = async (req, res, next) => {
   }
 }
 
+export const getOneBookByIsbn = async (req, res, next) => {
+  const { isbn } = req.params
+  try {
+    const RES = await Book.findByIsbn(isbn);
+    res.status(200).json(RES);
+  } catch (error) {
+    console.log(error);
+    res.status(400).json(error);
+  }
+}
+
 export const updateOneBook = async (req, res, next) => {
   const { id } = req.params
   const options = {
