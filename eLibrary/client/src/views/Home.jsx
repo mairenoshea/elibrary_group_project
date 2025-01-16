@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Navigate, useNavigate, useParams } from "react-router-dom";
+import { Navigate, useNavigate, useParams, Link } from "react-router-dom";
 import Header from '../components/Header.jsx'
 import SearchBar from "../components/SearchBar.jsx";
 import './Home.css'
@@ -31,7 +31,9 @@ export const Home = (props) => {
                         <div key={book.title} className="single-book">
                         <img src={book.image} alt={book.title} />
                         <p>{book.title} <br /> {book.subtitle}</p>
-                        <button>View Book</button>
+                        <Link to={`/book/${book.isbn13}`}>
+                            <button>View Book</button>
+                        </Link>
                         </div>
                         ))}
                     </div>
