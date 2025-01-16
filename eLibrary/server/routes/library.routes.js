@@ -15,7 +15,7 @@ libraryRouter.route("/library")
     .get(getAllBooks)
     .post(addReview);
 
-libraryRouter.route("/book/:id")
+libraryRouter.route("/book/:isbn")
 //for displaying one book and its information and reviews on the site
     .get(getOneBookByid)
 //for sending the post request when the review THIS book form is submitted

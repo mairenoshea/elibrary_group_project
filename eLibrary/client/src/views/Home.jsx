@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Navigate, useNavigate, useParams } from "react-router-dom";
 import Header from '../components/Header.jsx'
 import SearchBar from "../components/SearchBar.jsx";
 import './Home.css'
 export const Home = (props) => {
-    const [book, setBooks] = useState([]);
+    const [books, setBooks] = useState([]);
     const [error, setError] = useState(null);
 
     useEffect(() => {
@@ -27,7 +27,7 @@ export const Home = (props) => {
                     <h1>New Releases</h1>
                     <div className="books">
                         {
-                        book.slice(0,4).map(book => (
+                        books.slice(0,4).map(book => (
                         <div key={book.title} className="single-book">
                         <img src={book.image} alt={book.title} />
                         <p>{book.title} <br /> {book.subtitle}</p>

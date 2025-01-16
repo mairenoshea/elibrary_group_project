@@ -40,7 +40,7 @@ export const UserLogin = () => {
     submissionFunction(formData)
       .then(res =>  navigate(`/Home`))
       .catch((error) =>  setErrors(error))
-    console.log(errors);
+    
   }
 
   return (
