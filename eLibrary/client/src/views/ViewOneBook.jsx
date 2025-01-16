@@ -51,7 +51,7 @@ const [reviewToDelete, setReviewToDelete] = useState();
             })
             .catch((error) => {
                 setError(error.response.data.errors);
-                console.log(error)
+                console.log(error);
             })
     }
     const deleteHandler =(e) => {
@@ -59,7 +59,7 @@ const [reviewToDelete, setReviewToDelete] = useState();
         axios.delete(`http://localhost:8000/reviews/${reviewToDelete._id}`)
             .catch((error)=>{
                 setError(error.response.data.errors);
-                console.log(error)
+                console.log(error);
             })
     }
     return (
