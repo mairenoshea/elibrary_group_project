@@ -25,8 +25,8 @@ export const Home = (props) => {
                         {
                         books.slice(0,4).map(book => (
                         <div key={book.title} className="single-book">
-                        <img src={book.image} alt={book.title} />
-                        <p>{book.title} <br /> {book.subtitle}</p>
+                        <img src={book.image} alt={book.title} class="book_cover"/>
+                        <p>{book.title} <br />{book.subtitle}</p>
                         <Link to={`/books/${book.isbn13}`}>
                             <button>View Book</button>
                         </Link>
