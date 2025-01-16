@@ -136,23 +136,23 @@ const [reviewToDelete, setReviewToDelete] = useState();
             </div> */}
 
 
-            <div class="container"><div class="flex-1">
-<div class="card-container">
-    <div class="one-card">
+            <div className="container"><div className="flex-1">
+<div className="card-container">
+    <div className="one-card">
     {
                 books.map(book => (
                 <div key={book.title} className="single-book">
                 <h1>{book.title} <br /> {book.subtitle}</h1>
-                <img src={book.image} alt={book.title} class="book_cover"/>
+                <img src={book.image} alt={book.title} className="book_cover"/>
                 </div>
                 ))}
                 </div></div></div>
              
 
-<div class="flex-3">
-    <div class="reviews_container_container">
+<div className="flex-3">
+    <div className="reviews_container_container">
     <h3>Reader Reviews</h3>
-        <div class="reviews_container">
+        <div className="reviews_container">
             
             {
                         reviews.map(review => (
@@ -162,8 +162,8 @@ const [reviewToDelete, setReviewToDelete] = useState();
                                         <div class="flex-1">
                                             <p>Rating: {review.rating}/5</p></div>
                                             <div class="flex-3">by<h3>{review.user}</h3></div>
-                        <h4 class="flex-1-review">Title: {review.title}</h4>
-                        <p class="flex-1-revdetails">Description: {review.description}</p>
+                        <h4 className="flex-1-review">Title: {review.title}</h4>
+                        <p className="flex-1-revdetails">Description: {review.description}</p>
                         <form onSubmit={deleteHandler} ><input type="submit" onClick={(e)=> setReviewToDelete(review)} value="delete X" /></form>
                         </div></div>
                         :
