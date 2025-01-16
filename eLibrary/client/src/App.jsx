@@ -43,7 +43,7 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Navigate to="/users" />} />
+          <Route path="/" element={<UserLogin />} />
           <Route path="/users" element={<UserLogin />}/>
           <Route path='/Home' element={<Home data={data} onSearch={onSearch}/>}/>
           <Route path='/view/profile/:user_id' element={<Profile />}/>
