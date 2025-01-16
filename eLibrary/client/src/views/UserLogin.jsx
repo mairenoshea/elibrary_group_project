@@ -51,7 +51,7 @@ export const UserLogin = () => {
           Reviewer Name
           <input
             type="text"
-            realName="realName"
+            name="realName"
             value={formData.realName}
             onChange={updateFormData}
           />
@@ -62,7 +62,7 @@ export const UserLogin = () => {
           User Name
           <input
             type="text"
-            realName="userName"
+            name="userName"
             value={formData.userName}
             onChange={updateFormData}
           />
@@ -73,7 +73,7 @@ export const UserLogin = () => {
           Email
           <input
             type="email"
-            realName="email"
+            name="email"
             value={formData.email}
             onChange={updateFormData}
           />
@@ -84,7 +84,7 @@ export const UserLogin = () => {
           Password
           <input
             type="password"
-            realName="password"
+            name="password"
             value={formData.password}
             onChange={updateFormData}
           />
@@ -95,7 +95,7 @@ export const UserLogin = () => {
           Confirm Password
           <input
             type="password"
-            realName="confirmPassword"
+            name="confirmPassword"
             value={formData.confirmPassword}
             onChange={updateFormData}
           />
@@ -106,7 +106,7 @@ export const UserLogin = () => {
           Image
           <input
             type="text"
-            realName="image"
+            name="image"
             value={formData.image}
             onChange={updateFormData}
           />
