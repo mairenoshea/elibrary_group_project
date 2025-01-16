@@ -15,7 +15,7 @@ libraryRouter.route("/library")
     .get(getAllBooks)
     .post(addReview);
 
-libraryRouter.route("/book/:book_id")
+libraryRouter.route("/books/:book_id")
 //for displaying one book and its information and reviews on the site
     .get(getOneBookByid)
 //for sending the post request when the review THIS book form is submitted
@@ -24,6 +24,9 @@ libraryRouter.route("/book/:book_id")
     .put(updateOneBook)
 //for deleting the book 
     .delete(deleteBookByid);
+
+libraryRouter.route("/books/:isbn")
+.get(getOneBookByIsbn);
 
 libraryRouter.route("/reviews")
     .get(getAllReviews);

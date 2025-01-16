@@ -8,11 +8,19 @@ const USER_INSTANCE = axios.create({
 export const addUser = async (data) => {
     try {
         const RES = await USER_INSTANCE.post("/users", data)
+     
         return RES.data
     }
     catch (error) { throw error.response.data.errors }
 }
 
+export const addReview = async (data) => {
+    try {
+        const RES = await USER_INSTANCE.post("/reviews",data)
+        return RES.data
+    }
+    catch(error) {throw error.response.data.errors}
+}
 
 export const getAllUser = async () => {
     try {

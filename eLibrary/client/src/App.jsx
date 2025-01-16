@@ -13,6 +13,7 @@ import ViewOneBook from './views/ViewOneBook.jsx'
 function App() {
   const [data,setData]=useState([]);
   const[searchResults, setSearchResults]=useState([]);
+  const[loggedInUser, setLoggedInUser] = useState();
   useEffect(()=>{
   fetch("https://api.itbook.store/1.0/search/")
     .then(response => {
@@ -41,12 +42,12 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<UserLogin />} />
-          <Route path="/users" element={<UserLogin />}/>
-          <Route path='/Home' element={<Home data={data} onSearch={onSearch}/>}/>
+          <Route path="/" element={<UserLogin user={loggedInUser}/>} />
+          <Route path="/users" element={<UserLogin user={loggedInUser}/>}/>
+          <Route path='/Home' element={<Home data={data} onSearch={onSearch} user={loggedInUser}/>}/>
           <Route path='/view/profile/:user_id' element={<Profile />}/>
           <Route path='/library' element={<ViewAllBooks data={data} onSearch={onSearch}/>}/>
-          <Route path='/books/:isbn' element={<ViewOneBook data={data} onSearch={onSearch}/>} />
+          <Route path='/books/:isbn' element={<ViewOneBook data={data} onSearch={onSearch} />} />
           
         </Routes>
       </BrowserRouter>

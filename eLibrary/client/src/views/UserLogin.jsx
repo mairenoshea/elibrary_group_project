@@ -13,12 +13,14 @@ import Header from '../components/Header.jsx'
     image: "", 
   }
 
-export const UserLogin = () => {
+export const UserLogin = (props) => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [formData, setFormData] = useState(DEFAULT_FORM_DATA);
-
-
+  
+  const {loggedInUser} = props;
+  
+  
   const [errors, setErrors] = useState({});
 
   useEffect(() => {
@@ -38,7 +40,9 @@ export const UserLogin = () => {
     e.preventDefault();
     const submissionFunction = id ? updateOneUser : addUser;
     submissionFunction(formData)
-      .then(res =>  navigate(`/Home`))
+      .then(res =>  
+        navigate(`/Home`)
+      )
       .catch((error) =>  setErrors(error))
     
   }

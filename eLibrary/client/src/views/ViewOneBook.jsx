@@ -6,18 +6,18 @@ import SearchBar from "../components/SearchBar.jsx";
 
 export const ViewOneBook = (props) => {
     const navigate = useNavigate();
-    const {book_id} = useParams()
+    const {isbn} = useParams();
     const [books, setBooks] = useState([]);
     const [error, setError] = useState(null);
     const [reviews, setReviews] = useState([]);
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const [rating, setRating] = useState(0);
-    const [bookIsbn, setBookIsbn] = useState('');
-    const [user, setUser] = useState('');
+    const [bookIsbn, setBookIsbn] = useState();
+    const [user, setUser] = useState();
 
     useEffect(() => {
-        fetch(`https://api.itbook.store/1.0/search/${book_id}`)
+        fetch(`https://api.itbook.store/1.0/search/${isbn}`)
           .then(response => response.json())
           .then(data => setBooks(data.books))
           .catch(error => console.error('Error fetching books:', error));
@@ -70,7 +70,7 @@ export const ViewOneBook = (props) => {
                     <h2>Reviews</h2>
                     {
                         reviews.map(review => (
-                            review.bookIsbn == book_id ?
+                            review.bookIsbn == isbn ?
                         <div key={review.title} className="single-book">
                         <h3>{review.user}</h3>
                         <p>Title: {review.title}</p>
