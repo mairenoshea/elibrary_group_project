@@ -18,11 +18,6 @@ export const Home = (props) => {
         <>
             <Header />
             <div className="container">
-                <div className="genres">
-                    <p>All Genres</p>
-                    <a href="">nonfiction</a>
-                    <a href="">fiction</a>
-                </div>
                 <div className="books-cont">
                     <h1>New Releases</h1>
                     <div className="books">
