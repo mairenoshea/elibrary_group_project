@@ -71,7 +71,7 @@ const Profile = () => {
             <h4>Book 1 Title</h4>
             <p>Review Title by me on Date</p>
             <p>Review Text/Details</p>
-           <button onClick={deleteReview}>Remove Remove</button> <br />
+           <button onClick={deleteReview}>Remove Review</button> <br />
 
       </div>
     </div>
