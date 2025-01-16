@@ -7,7 +7,7 @@ const Header = (props) => {
         <>
         <div className="header">
             <div className="headerLinks">
-                <Link to={"/"}>
+                <Link to={"/Home"}>
                     <button className="headerLinkButton">Home</button>
                 </Link>
             </div>

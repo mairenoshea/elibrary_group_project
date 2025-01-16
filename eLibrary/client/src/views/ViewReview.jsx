@@ -10,7 +10,7 @@ const ViewReview = (props) => {
     console.log(review_id);
     const navigate=useNavigate();
     useEffect(()=>{
-        axios.get(`http://localhost:9999/api/${review_id}`) 
+        axios.get(`http://localhost:8000/api/${review_id}`) 
         .then((res)=>{
             console.log(res.data);
             setReview(res.data);
@@ -21,7 +21,7 @@ const ViewReview = (props) => {
     },[]);
 
     const deleteHandler=()=>{
-        axios.delete(`http://localhost:9999/api/${review_id}`)
+        axios.delete(`http://localhost:8000/api/${review_id}`)
         .then((res)=>{
             console.log(res.data);
             navigate("/");
