@@ -85,7 +85,7 @@ const [reviewToDelete, setReviewToDelete] = useState();
         }
         setFormErrors({...formErrors,newReviewRating:errorMsg});
         setNewReviewRating(value);
-        setUserName(value);
+        setRating(value);
     }
 
     
@@ -240,8 +240,9 @@ const [reviewToDelete, setReviewToDelete] = useState();
                             max={5} 
                             name="rating"
                             value={rating} 
-                            onChange={(e) => setRating(e.target.value)}/></div>
+                            onChange={newReviewRatingHandler}/></div>
                             <div>
+                                {formErrors.newReviewRating ? <p className="error">{formErrors.newReviewRating}</p> : null}
                             <label>User name</label>
                             <input 
                             type="text" 
